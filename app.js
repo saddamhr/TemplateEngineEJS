@@ -4,15 +4,17 @@ const morgan = require('morgan')
 
 const app = express()
 
+app.set('view engine', 'ejs')
+
 app.use(morgan('dev'))
 app.use(express(urlencoded({extended: true})))
 app.use(express.json())
 
 app.get('/', (req, res) => {
-    res.send(`Working on Template Engine`)
+    res.render('index')
 })
 
-const PORT = process.env.PORT || 808
+const PORT = process.env.PORT || 8080
 
 app.listen(PORT, () => {
     console.log(`SERVER RUNNING ON PORT ${PORT}`)
