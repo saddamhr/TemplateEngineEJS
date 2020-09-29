@@ -16,7 +16,12 @@ app.get('/', (req, res) => {
         body: 'Test Body',
         published: false
     }
-    res.render('index', {title: 'EJS is an Awesome Template Engine', post})
+
+    let posts = [
+        {title: 'Post 1', author: 's.rakib'},
+        {title: 'Post 2', author: 's.rakib'}
+    ]
+    res.render('index', {title: 'EJS is an Awesome Template Engine', post, posts})
 })
 
 const PORT = process.env.PORT || 8080
