@@ -8,10 +8,18 @@
 </head>
 
 <body>
-    <h1>EJS is an awesome template engine</h1>
+    <h1> <%=title%> </h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dolor voluptatum quam optio mollitia numquam
         voluptatibus praesentium, minima, cum nisi dolorem quisquam voluptas eligendi magni consectetur voluptatem autem
         nam beatae.</p>
+    <%= new Date().toString() %>
+
+    <% if(post.published){%>
+    <h3>Title: <%= post.title %></h3>
+    <p>Body: <%= post.body%></p>
+    <% } else {%>
+        <p>Post is not yet published!</p>
+    <%}%>
 </body>
 
 </html>

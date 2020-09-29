@@ -11,7 +11,12 @@ app.use(express(urlencoded({extended: true})))
 app.use(express.json())
 
 app.get('/', (req, res) => {
-    res.render('index')
+    let post = {
+        title: 'Test Title',
+        body: 'Test Body',
+        published: false
+    }
+    res.render('index', {title: 'EJS is an Awesome Template Engine', post})
 })
 
 const PORT = process.env.PORT || 8080
